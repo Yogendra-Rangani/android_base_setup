@@ -22,9 +22,9 @@ abstract class ApiResponseHandler {
         apiToBeCalled: suspend () -> Response<T>,
     ): ResponseStatus<T> {
         return withContext(Dispatchers.IO) {
-//            if (!isNetworkAvailable) {
-//                return@withContext ResponseStatus.Error(NETWORK_CONNECTION)
-//            }
+            if (!isNetworkAvailable) {
+                return@withContext ResponseStatus.Error(NETWORK_CONNECTION)
+            }
 
             val response: Response<T> = apiToBeCalled()
             try {

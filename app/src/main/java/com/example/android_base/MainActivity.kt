@@ -7,7 +7,9 @@ import com.example.android_base.retrofit.ResponseStatus
 import com.example.android_base.utils.show
 import com.example.android_base.utils.toast
 import com.example.android_base.viewmodel.PostViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private val _postViewModel by viewModels<PostViewModel>()
 
@@ -25,6 +27,7 @@ class MainActivity : AppCompatActivity() {
                 when (it) {
                     is ResponseStatus.Loading -> {}
                     is ResponseStatus.Success -> {
+                        it.data.toString().toast(this)
                         loader.dismiss()
                     }
 

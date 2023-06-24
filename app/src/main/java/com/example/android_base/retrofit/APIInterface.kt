@@ -18,10 +18,4 @@ interface APIInterface {
 
     @GET("photos")
     suspend fun getPost(): Response<List<PostResponse>>
-
-    companion object {
-        fun getApi(): APIInterface {
-            return ApiUtils.ApiClient.client?.create(APIInterface::class.java)!!
-        }
-    }
 }
