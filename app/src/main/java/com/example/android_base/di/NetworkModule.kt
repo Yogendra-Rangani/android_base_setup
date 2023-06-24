@@ -1,6 +1,8 @@
-package com.example.android_base.retrofit
+package com.example.android_base.di
 
 import com.example.android_base.BuildConfig
+import com.example.android_base.retrofit.APIInterface
+import com.example.android_base.retrofit.ApiServiceRepo
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
