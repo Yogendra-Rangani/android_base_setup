@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        _postViewModel.getPostVM(this)
+        _postViewModel.getPostVM(query = "AI+Animal")
         observer()
     }
 

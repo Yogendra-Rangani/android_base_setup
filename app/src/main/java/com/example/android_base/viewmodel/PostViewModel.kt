@@ -31,6 +31,14 @@ class PostViewModel @Inject constructor(private val apiServiceRepo: ApiServiceRe
             _post.value = CoroutinesEvent(response)
         }
     }
+
+    fun getPostVM(query: String) {
+        _post.value = CoroutinesEvent(ResponseStatus.Loading())
+        viewModelScope.launch {
+            val response = apiServiceRepo.getPostRepo(query = query)
+            _post.value = CoroutinesEvent(response)
+        }
+    }
     /*
        val allTransactionsLiveData: MutableLiveData<CoroutinesEvent<ResponseStatus<TransactionModel>>?> = MutableLiveData()
 
