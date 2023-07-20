@@ -12,7 +12,7 @@ class ApiServiceRepo @Inject constructor(private val apiInterface: APIInterface)
         }
     }
 
-    fun getPostRepo(query: String): ResponseStatus<List<PostResponse>> {
-        TODO("Not yet implemented")
-    }
+//    fun getPostRepo(query: String): ResponseStatus<List<PostResponse>> {
+//        return null
+//    }
 }
